@@ -39,5 +39,7 @@ int main() {
 	else {
 		cout << "정렬검사결과 false" << endl;
 	}
+	delete[] output;
 	delete[] input;
+	return 0;
 }
