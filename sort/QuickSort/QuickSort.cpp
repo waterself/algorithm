@@ -29,13 +29,13 @@ void QuickSort(int* array, int left, int right) {
         //for (int i = 0; i < right - left + 1; i++) {
         //    cout << array[i] << ", ";
         //}
-        /*cout << ']' << endl;*/
+        //cout << ']' << endl;
         QuickSort(array, left, forward - 1);
         //cout << ++cnt << " 번째 변경: [";
         //for (int i = 0; i < right - left + 1; i++) {
         //    cout << array[i] << ", ";
         //}
-        /*cout << ']' << endl;*/
+        //cout << ']' << endl;
         QuickSort(array, forward + 1, right);
         //cout << ++cnt << " 번째 변경: [";
         //for (int i = 0; i < right - left + 1; i++) {
@@ -77,4 +77,5 @@ int main() {
     else {
         cout << "정렬검사결과 false" << endl;
     }
+    delete[] array;
 }
