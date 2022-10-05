@@ -30,16 +30,25 @@ void BuildMaxHeap(int* array, int size) {
 	for (parentNode = size / 2 - 1; parentNode >= 0; parentNode--) {
 		MaxHeapfy(array, parentNode, size);
 	}
+	cout << "Build Max heap" << endl;
+	for (int i = 0; i < size; i++) cout << "index[" << i << "] : " << array[i] << ", ";
+	cout << endl;
 }
 
 int* MaxHeapSort(int* array, int size) {
 	int* output = array;
 	BuildMaxHeap(array, size);
-	int root = 1;
+	int root = 0;
 	for (int i = size - 1 ; i > 0; i--) {
 		arraySwap(array, i, root);
 		output[i] = array[i];
-		MaxHeapfy(array, 1, i);
+		cout << "swap last, root" << endl;
+		for (int i = 0; i < size; i++) cout << "index[" << i << "] : " << output[i] << ", ";
+		cout << endl;
+		MaxHeapfy(array, 0, i);
+		cout << "heapfy" << endl;
+		for (int i = 0; i < size; i++) cout << "index[" << i << "] : " << array[i] << ", ";
+		cout << endl;
 	}
 	return output;
 }
@@ -47,23 +56,20 @@ int* MaxHeapSort(int* array, int size) {
 
 
 int main() {
-	int size = 15;
-	// 9 8 7 6 4 3 
-	// ³»·Á°¥ ¶§ n*2, n*2+1
-	// ¿Ã¶ó°¥ ¶§ n/2
-	int* array = MakeRandomArray(size);
-	//int size = 7;
-	//int* array = new int[size] {0, 7, 9, 4, 8, 6, 3};
+	//int size = 100;
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ n*2, n*2+1
+	// ï¿½Ã¶ï¿½ ï¿½ï¿½ n/2
+	//int* array = MakeRandomArray(size);
+	int size = 6;
+	//3, 4, 6, 7, 8, 9
+	int* array = new int[size] {3, 6, 4, 8, 9, 7};
 	int* output = MaxHeapSort(array, size);
-	for (int i = 1; i < size; i++) {
-		cout << array[i] << ", ";
-	} cout << endl;
-	if (SortCheck(array, size) == true) {
-		cout << "Á¤·Ä°Ë»ç°á°ú true" << endl;
-	}
-	else {
-		cout << "Á¤·Ä°Ë»ç°á°ú false" << endl;
-	}
+	cout << "Heap Sort Done" << endl;
+	for (int i = 0; i < size; i++) cout << "index[" << i << "] : " << array[i] << ", ";
+	cout << endl;
+	delete[] array;
+	delete[] output;
+	return 0;
 }
 
 
