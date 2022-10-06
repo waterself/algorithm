@@ -45,8 +45,8 @@ int* MaxHeapSort(int* array, int size) {
 		cout << "swap last, root" << endl;
 		for (int i = 0; i < size; i++) cout << "index[" << i << "] : " << output[i] << ", ";
 		cout << endl;
-		MaxHeapfy(array, 0, i);
-		cout << "heapfy" << endl;
+		BuildMaxHeap(array, i);
+		cout << "build max heap" << endl;
 		for (int i = 0; i < size; i++) cout << "index[" << i << "] : " << array[i] << ", ";
 		cout << endl;
 	}
