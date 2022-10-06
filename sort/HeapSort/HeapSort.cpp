@@ -5,8 +5,8 @@ using namespace std;
 void MaxHeapfy(int* array, int first, int size) {
 	int currenNode = first;
 
-	int leftChild = currenNode * 2;
-	int rightChild = currenNode * 2 + 1;
+	int leftChild = currenNode * 2 + 1;
+	int rightChild = currenNode * 2 + 2;
 
 	if (leftChild < size) {
 		if (array[currenNode] < array[leftChild]) {
