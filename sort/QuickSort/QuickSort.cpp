@@ -10,6 +10,7 @@ void QuickSort(int* array, int left, int right) {
         pivot = array[right];
         pindex = right;
         forward = left - 1;
+        
         backward = right;
         while (true) {
             while (array[++forward] < pivot);
