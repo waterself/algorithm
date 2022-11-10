@@ -2,15 +2,15 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "cppbuild",
-			"label": "C/C++: g++.exe 활성 파일 빌드",
+			"type": "shell",
+			"label": "g++build",
 			"command": "C:\\MinGW\\bin\\g++.exe",
 			"args": [
-				"-fdiagnostics-color=always",
+				//"-fdiagnostics-color=always",
 				"-g",
-				"${fileDirname}",
+				"${fileDirname}\\**.cpp",
 				"-o",
-				"${workspaceFolderBasename}.exe"
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
@@ -23,6 +23,16 @@
 				"isDefault": true
 			},
 			"detail": "컴파일러: C:\\MinGW\\bin\\g++.exe"
+			
+		},
+		{
+			"label": "execute",
+			"command": "cmd",
+			"group": "test",
+			"args": [
+				"/C",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+			]
 		}
 	]
 }
