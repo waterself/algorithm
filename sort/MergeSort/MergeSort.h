@@ -1,10 +1,13 @@
 #pragma once
 #ifndef MERGESORT_H
+void arraySwap(int* in, int a, int b);
 
-void arraySwap(int* in, int a, int b); //swap a and b in array in
-
-bool SortCheck(int*array, int size); //ascending sort check
+bool SortCheck(int* array, int size);
 
 int* MakeRandomArray(int size);
+
+void arrayPrint(int* array, int size);
+#endif // !MERGESORT_H
+
 
 #endif // !MERGESORT_H
